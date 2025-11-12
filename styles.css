@@ -698,3 +698,64 @@ body {
 .business-paytm{
     margin-left:120px;
 }
+
+.footer{
+    padding-top:40px;
+    padding-left:12%;
+    padding-right:10%;
+}
+
+.footer1{
+    color:#707070;
+}
+
+.footer1 div{
+    margin-top:15px;
+    display:flex;
+    font-weight: bold;
+    font-size: 15px;
+    padding:8px 10px;
+}
+.span1{
+    padding-right:5px;
+}
+.span2{
+    border-bottom: 1px solid grey;
+    flex-grow: 3;
+    margin-top:20px;
+    margin-left:10px;
+}
+
+.footer2{
+    padding-left:10px;
+    color:#707070;
+    margin-top:30px;
+    display:flex;
+    justify-content: space-between;
+    font-size :15px;
+}
+
+.followus{
+    align-self:center;
+    display:flex;
+    align-items: center;
+    padding-right:10px;
+}
+
+.followus div{
+    padding-left:20px;
+}
+
+.final{
+    margin-top:30px;
+}
+#i1{
+    background-color: #00baf2;
+    width:100vw;
+    height:15px;
+}
+#i2{
+    background-color: #002970;
+    width:100vw;
+    height:15px;
+}
