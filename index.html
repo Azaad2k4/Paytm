@@ -10,15 +10,26 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#"><img src="Assets/paytm.png" width="170px" alt="Paytm Logo"></a>
-        <a href="#">Recharge & Bills</a>
-        <a href="#">Ticket Booking</a>
-        <a href="#">Payments & Services</a>
-        <a href="#">Paytm for Business</a>
-        <a href="#">Company</a>
-        <a href="#">Recharge & Bills</a>
-        <a href="#"><img src="Assets/download.svg" alt="Download Icon"><span>Download App</span></a>
-        <button class="button" type="button"><img src="Assets/logoutImg.svg" width="30px" alt="Sign In Icon"><span>Sign In</span></button>
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><img src="Assets/paytm.png" width="170px" alt="Paytm Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#">Recharge & Bills</a>
+                <a href="#">Ticket Booking</a>
+                <a href="#">Payments & Services</a>
+                <a href="#">Paytm for Business</a>
+                <a href="#">Company</a>
+                <a href="#">Recharge & Bills</a>
+                <a href="#" class="nav-download"><img src="Assets/download.svg" alt="Download Icon"><span>Download App</span></a>
+            </div>
+            <div class="nav-right">
+                <button class="button" type="button"><img src="Assets/logoutImg.svg" width="30px" alt="Sign In Icon"><span>Sign In</span></button>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
     </nav>
 
     <section class="whole-sec">
@@ -56,12 +67,12 @@
                     </div>
                 </div>
                 <div class="check">
-                    <img src="Assets/check spent.png" alt="check spent" width = 112.5%/>
+                    <img src="Assets/check spent.png" alt="check spent"/>
                 </div>
             </div>
             <div class = "cashback">
-                <img src = "Assets/cashback.avif" alt = "cashback" width = "600px" id = "cashback">
-                <img src = "Assets/broadband.avif" alt = "broadband" width = "600px" id = "broadband">
+                <img src = "Assets/cashback.avif" alt = "cashback" id = "cashback">
+                <img src = "Assets/broadband.avif" alt = "broadband" id = "broadband">
             </div>
     </section>
     <section class = "img3">
@@ -191,14 +202,14 @@
                 <h1>One destination for <span>Credit Cards</span></h1>
                 <p>Paytm HDFC, SBI Card & Axis Bank Credit Card with assured Cashback and incredible offers.</p>
                 <div class = "banks"><a href = "#">Apply Now <i class="fa-solid fa-arrow-right"></i></a><img src = "Assets/banks.avif" width = "200px"></div>
-                <img src = "Assets/creditcards.avif" alt = "credit cards" width = "120%">
+                <img src = "Assets/creditcards.avif" alt = "credit cards" class = "card-img">
         </div>
         <div class = "insurance">
             <div><img src = "Assets/paytm insurance.png" alt = "credit logo" width = "130px"></div>
                 <h1>Insurance ka <br><span>Super Market</span></h1>
                 <p>A Smart, Simple & Transparent Platform to Explore & Purchase Insurance.</p>
                 <a href = "#">Get It Now <i class="fa-solid fa-arrow-right"></i></a>
-                <img src = "Assets/family.avif" alt = "family" width = "120%">
+                <img src = "Assets/family.avif" alt = "family" class = "family-img">
         </div>
     </section>
     <section class = "paytmmoney">
@@ -275,6 +286,25 @@
         <div id = "i1"></div>
         <div id = "i2"></div>
     </section>
-    
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            document.addEventListener('click', (e) => {
+                if (!menuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            if (window.location.hash === '#menu') {
+                menuToggle.click();
+            }
+        }
+    </script>
 </body>
 </html>
